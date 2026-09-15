@@ -1,0 +1,37 @@
+[Unit]
+Description=V-POKER Backend Service (Spring Boot)
+Documentation=https://github.com/AthenDrakomin-hub/qipai
+After=syslog.target network.target mysql.service
+Wants=mysql.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/vpoker
+
+# 可选的环境变量文件，存放敏感配置（如数据库密码、JWT 密钥等）
+# 建议权限：chmod 600 /opt/vpoker/.env.prod
+EnvironmentFile=-/opt/vpoker/.env.prod
+
+# 默认环境变量（若 .env.prod 未定义则使用默认值）
+Environment="JAVA_OPTS=-Xms512m -Xmx2048m -XX:+UseG1GC -Dfile.encoding=UTF-8"
+Environment="SPRING_PROFILES_ACTIVE=prod"
+Environment="SPRING_H2_CONSOLE_ENABLED=false"
+
+# 启动命令
+# 注意：若安装的 JDK 路径非 /usr/bin/java，请根据 which java 输出进行调整
+ExecStart=/usr/bin/java $JAVA_OPTS -jar /opt/vpoker/poker-platform-1.0.0.jar --spring.profiles.active=${SPRING_PROFILES_ACTIVE} --spring.h2.console.enabled=${SPRING_H2_CONSOLE_ENABLED}
+
+# 守护进程与重启策略
+Restart=always
+RestartSec=10
+TimeoutStartSec=120
+LimitNOFILE=65535
+
+# 日志输出至 systemd journal（通过 journalctl -u vpoker-backend -f 查看）
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=vpoker-backend
+
+[Install]
+WantedBy=multi-user.target

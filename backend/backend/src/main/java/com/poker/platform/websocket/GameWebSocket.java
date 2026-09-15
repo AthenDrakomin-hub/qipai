@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 房间实时推送 WebSocket 端点（原型 30-36 各阶段实时驱动 + 43 聊天 / 44 表情）
  *
- * 连接：ws://host/api/ws/room/{roomId}?token=xxx
+ * 连接：ws://host/ws/room/{roomId}?token=xxx （注意：WebSocket 端点不带 /api 前缀）
  *
  * 连接建立后服务端立即下发 TABLE_STATE 快照，供「断线重连」（原型 36）恢复牌桌。
  */
