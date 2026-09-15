@@ -1,0 +1,76 @@
+// ============================================================
+// V-POKER 设计令牌 · 颜色
+// 来源：从 45 张横屏原型图提取的视觉配色
+// 主题：深宝蓝赌场风 + 金色品牌 + 紫色筹码
+// ============================================================
+
+// ---------- 品牌色 ----------
+$color-brand-gold:        #E6C25A;   // 品牌金（主操作按钮、高亮文字）
+$color-brand-gold-deep:  #C9A961;   // 品牌金深（按钮下压态、描边）
+$color-brand-gold-light: #F0D88A;   // 品牌金浅（高光、辉光）
+$color-brand-purple:      #7B68EE;   // 品牌紫（百人场、次级主按钮）
+$color-brand-purple-deep: #5B4BC4;  // 品牌紫深
+$color-brand-purple-light:#9D8FFF;   // 品牌紫浅
+
+// ---------- 页面背景 ----------
+$color-bg-page:           #0B1A3A;   // 页面主背景（深宝蓝）
+$color-bg-page-deep:      #070F24;   // 页面深背景（渐变下端）
+$color-bg-page-glow:      #142554;   // 页面霓虹光斑层
+
+// ---------- 面板 / 卡片 ----------
+$color-bg-panel:          rgba(25, 42, 88, 0.72);   // 半透明深蓝面板（弹窗、列表条）
+$color-bg-panel-solid:    #1A2B58;                   // 实色面板
+$color-bg-card:           #1E3260;                   // 卡片底色
+$color-bg-card-hover:     #27407A;                   // 卡片 hover / 按下
+$color-bg-input:          rgba(7, 18, 45, 0.55);    // 输入框底色
+$color-bg-mask:           rgba(4, 10, 26, 0.78);    // 遮罩层
+
+// ---------- 文字 ----------
+$color-text-primary:      #FFFFFF;   // 主文字
+$color-text-regular:      #D6DEEF;    // 常规文字
+$color-text-secondary:    #9AA8CC;    // 次文字
+$color-text-placeholder:  #5A6B94;    // 占位 / 禁用文字
+$color-text-gold:         #F0D070;    // 金色强调文字
+$color-text-green:        #3ED683;    // 赢 / 成功文字
+$color-text-red:          #FF6B6B;    // 输 / 危险文字
+
+// ---------- 语义色 ----------
+$color-success:           #2ECC71;
+$color-success-deep:      #27AE60;
+$color-warning:           #F39C12;
+$color-error:             #E74C3C;
+$color-error-deep:        #C0392B;
+$color-info:              #5DADE2;
+
+// ---------- 边框 / 分割线 ----------
+$color-border-gold:       rgba(212, 175, 55, 0.45);  // 金色描边
+$color-border-gold-strong:rgba(212, 175, 55, 0.85);  // 金色强描边（选中态）
+$color-border-light:      rgba(255, 255, 255, 0.08); // 普通分割线
+$color-border-active:     #7B68EE;                   // 选中态描边
+
+// ---------- 游戏元素 ----------
+$color-felt-green:        #0E5C42;   // 牌桌绒布绿（德州）
+$color-felt-blue:         #14356E;   // 牌桌绒布蓝（金花/三公）
+$color-chip-purple:       #7B5EA7;   // 紫色筹码
+$color-chip-red:          #C0392B;   // 红色筹码
+$color-chip-green:        #27AE60;   // 绿色筹码
+$color-chip-blue:         #2980B9;   // 蓝色筹码
+$color-gold-coin:         #F5D76E;  // 金币
+
+// ---------- 渐变（供 background 使用）----------
+$gradient-btn-gold:       linear-gradient(180deg, #F0D070 0%, #C9A961 100%);
+$gradient-btn-gold-press: linear-gradient(180deg, #C9A961 0%, #9E8142 100%);
+$gradient-btn-green:      linear-gradient(180deg, #3ED683 0%, #27AE60 100%);
+$gradient-btn-red:        linear-gradient(180deg, #FF6B5B 0%, #C0392B 100%);
+$gradient-btn-purple:     linear-gradient(180deg, #8B7CF6 0%, #5B4BC4 100%);
+$gradient-btn-blue:       linear-gradient(180deg, #4FA8E8 0%, #2E6FB8 100%);
+$gradient-btn-gray:       linear-gradient(180deg, #4A5A82 0%, #2E3D5E 100%);
+$gradient-page:           linear-gradient(180deg, #142554 0%, #070F24 100%);
+$gradient-card:           linear-gradient(180deg, #27407A 0%, #1A2B58 100%);
+
+// ---------- 阴影 / 辉光 ----------
+$shadow-gold-glow:        0 0 24rpx rgba(230, 194, 90, 0.45);
+$shadow-purple-glow:      0 0 24rpx rgba(123, 104, 238, 0.45);
+$shadow-card:              0 8rpx 32rpx rgba(0, 0, 0, 0.45);
+$shadow-modal:             0 16rpx 64rpx rgba(0, 0, 0, 0.6);
+$shadow-btn:               0 4rpx 12rpx rgba(0, 0, 0, 0.35);

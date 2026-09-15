@@ -1,0 +1,85 @@
+// ============================================================
+// V-POKER 设计令牌 · 汇总入口
+// 在 uni.scss 或全局样式中 @import "@/styles/tokens/index.scss";
+// ============================================================
+
+@import "./color.scss";
+@import "./typography.scss";
+@import "./spacing.scss";
+@import "./shape.scss";
+@import "./responsive.scss";
+
+// ---------- 语义化组合（方便组件直接调用）----------
+
+// 主操作按钮
+@mixin btn-primary {
+  background: $gradient-btn-gold;
+  color: $color-text-primary;
+  border-radius: $radius-full;
+  box-shadow: $shadow-btn, $shadow-gold-glow;
+  font-weight: $font-weight-bold;
+}
+
+// 危险操作按钮
+@mixin btn-danger {
+  background: $gradient-btn-red;
+  color: $color-text-primary;
+  border-radius: $radius-full;
+  box-shadow: $shadow-btn;
+  font-weight: $font-weight-bold;
+}
+
+// 成功操作按钮
+@mixin btn-success {
+  background: $gradient-btn-green;
+  color: $color-text-primary;
+  border-radius: $radius-full;
+  box-shadow: $shadow-btn;
+  font-weight: $font-weight-bold;
+}
+
+// 次级按钮
+@mixin btn-secondary {
+  background: $gradient-btn-purple;
+  color: $color-text-primary;
+  border-radius: $radius-full;
+  box-shadow: $shadow-btn, $shadow-purple-glow;
+  font-weight: $font-weight-bold;
+}
+
+// 幽灵 / 取消按钮
+@mixin btn-ghost {
+  background: $gradient-btn-gray;
+  color: $color-text-regular;
+  border-radius: $radius-full;
+  box-shadow: $shadow-btn;
+  font-weight: $font-weight-medium;
+}
+
+// 卡片
+@mixin card {
+  background: $color-bg-panel;
+  border: $border-width-thin solid $color-border-gold;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+}
+
+// 输入框
+@mixin input {
+  background: $color-bg-input;
+  border: $border-width-thin solid $color-border-light;
+  border-radius: $radius-base;
+  color: $color-text-primary;
+
+  &:focus {
+    border-color: $color-border-gold-strong;
+    box-shadow: $shadow-focus;
+  }
+}
+
+// 页面背景（含安全区兜底，横屏刘海屏自动避让）
+@mixin page-bg {
+  background: $gradient-page;
+  min-height: 100vh;
+  @include safe-area-only;
+}

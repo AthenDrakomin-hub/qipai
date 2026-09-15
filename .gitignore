@@ -1,0 +1,30 @@
+# Build output
+backend/backend/target/
+backend/target/
+unpackage/
+node_modules/
+
+# Java class files
+*.class
+*.jar
+*.jar.original
+
+# macOS artifacts
+__MACOSX/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

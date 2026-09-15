@@ -1,0 +1,79 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: poker-platform
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/poker_platform?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: poker
+    password: Poker@2024
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.poker.platform.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+jwt:
+  secret: poker-platform-super-secret-key-2024-please-change-in-production
+  expire: 86400000
+  header: Authorization
+  prefix: Bearer
+
+platform:
+  # 单局赢家抽水比例 3%
+  rake-percent: 3
+  # 开房抽佣（水费）按房主角色：总代2% / 一级1.5% / 二级1%
+  water-fee-general-agent-percent: 2.0
+  water-fee-primary-agent-percent: 1.5
+  water-fee-secondary-agent-percent: 1.0
+  # 多级推广抽成：代理1% / 一级1% / 总代1%（需求文档：1%代理分佣 + 1%总代分佣）
+  commission-secondary-percent: 1.0
+  commission-primary-percent: 1.0
+  commission-general-agent-percent: 1.0
+  # 跨级兜底：统一 1%
+  commission-general-agent-fallback-percent: 1.0
+  commission-primary-fallback-percent: 1.0
+  # 公域匹配：平台总抽 0.3%，各代理层级各 0.15% 依次分佣
+  public-match-total-rake-percent: 0.3
+  public-match-agent-commission-percent: 0.15
+  # 每房间总局数
+  rounds-per-room: 25
+  # 玩家带入区间
+  player-min-buyin: 200
+  player-max-buyin: 2000
+  # 房间等级配置
+  room-levels:
+    primary:
+      min-buyin: 200
+      max-buyin: 1000
+      credit-threshold: 100
+    advanced:
+      min-buyin: 500
+      max-buyin: 5000
+      credit-threshold: 1000
+    premium:
+      min-buyin: 1000
+      max-buyin: 20000
+      credit-threshold: 3000
+
+logging:
+  level:
+    com.poker.platform: info

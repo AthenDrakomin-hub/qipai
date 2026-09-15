@@ -1,0 +1,4 @@
+// uni-app 全局 scss 变量（uni.scss 会被每个页面自动注入）
+// 业务变量统一从 tokens 引入，这里只放 uni-app 框架变量
+
+@import "@/styles/tokens/index.scss";

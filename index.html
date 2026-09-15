@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
+    />
+    <meta name="screen-orientation" content="landscape" />
+    <meta name="x5-orientation" content="landscape" />
+    <title>V-POKER</title>
+    <script>
+      // 仅 H5 端需要，处理安全区
+      var coverSupport =
+        'CSS' in window &&
+        typeof CSS.supports === 'function' &&
+        (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
+      document.write(
+        '<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no' +
+          (coverSupport ? ',viewport-fit=cover' : '') +
+          '" />'
+      )
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      // H5 强制横屏：浏览器本身无法被网页强制旋转，这里采用"横屏舞台"方案——
+      // 手机竖屏打开时，把应用装入按横屏尺寸（长边 × 短边）渲染的 iframe 并整体旋转 90°，
+      // 用户把手机横过来即为标准横屏界面，完全不依赖系统"自动旋转"设置；桌面浏览器不受影响。
+      (function () {
+        var search = location.search || ''
+        if (search.indexOf('__fl=1') > -1) return
+
+        var w = window.innerWidth
+        var h = window.innerHeight
+        var touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+        var ua = navigator.userAgent
+        var ipadLike = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1
+        var mobileLike = /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || ipadLike
+        var portrait = h > w
+        var testMode = search.indexOf('__fl_test=1') > -1
+        if (!testMode && !(portrait && touch && (mobileLike || Math.min(w, h) <= 480))) return
+
+        window.__PK_FL_STAGE__ = true
+
+        var W = Math.max(w, h)
+        var H = Math.min(w, h)
+
+        var base = location.href.split('#')[0].replace(/([?&])__fl=1&?/, '$1').replace(/[?&]$/, '')
+        var hash = location.hash || ''
+        var stage = document.createElement('iframe')
+        stage.src = base + (base.indexOf('?') > -1 ? '&' : '?') + '__fl=1' + hash
+        stage.style.cssText =
+          'position:fixed;top:0;left:0;border:0;background:#0B1A3A;transform-origin:0 0;' +
+          'width:' + W + 'px;height:' + H + 'px;transform:translateX(' + H + 'px) rotate(90deg);'
+        document.body.appendChild(stage)
+
+        var app = document.getElementById('app')
+        if (app) app.style.display = 'none'
+        document.documentElement.style.overflow = 'hidden'
+        document.body.style.cssText = 'margin:0;padding:0;overflow:hidden;background:#0B1A3A;'
+
+        var tip = document.createElement('div')
+        tip.style.cssText =
+          'position:fixed;left:0;right:0;bottom:26px;z-index:2147483647;display:flex;justify-content:center;'
+        tip.innerHTML =
+          '<div style="background:rgba(0,0,0,.72);color:#E6C25A;font-size:14px;line-height:1.6;' +
+          'padding:10px 18px;border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,.4);font-family:sans-serif;">' +
+          '📱 已切换横屏 · 请旋转手机使用（点此关闭）</div>'
+        tip.onclick = function () { tip.remove() }
+        document.body.appendChild(tip)
+        setTimeout(function () { tip.remove() }, 6000)
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > window.innerHeight) location.reload()
+        })
+      })()
+    </script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

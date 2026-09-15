@@ -1,0 +1,22 @@
+// ============================================================
+// V-POKER 设计令牌 · 横屏 / 安全区适配
+// - safe-area-padding：页面根容器避开刘海、圆角、Home 指示条
+//   用法：@include safe-area-padding(24rpx, 40rpx, 24rpx, 40rpx);
+//   参数顺序：上 / 右 / 下 / 左，自动叠加 env(safe-area-inset-*)（非刘海设备为 0）
+// - 说明：横屏下 750rpx = 视口长边，与 16:9 横屏设计稿等比；
+//   页面根容器统一使用 min-height: 100vh，保证更扁屏幕下内容可滚动、不被裁切。
+// ============================================================
+
+@mixin safe-area-padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  padding-top: calc(#{$top} + env(safe-area-inset-top));
+  padding-right: calc(#{$right} + env(safe-area-inset-right));
+  padding-bottom: calc(#{$bottom} + env(safe-area-inset-bottom));
+  padding-left: calc(#{$left} + env(safe-area-inset-left));
+}
+
+@mixin safe-area-only {
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+}

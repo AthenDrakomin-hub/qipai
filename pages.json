@@ -1,0 +1,39 @@
+{
+  "pages": [
+    { "path": "pages/splash/index",        "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/login/index",        "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/register/index",     "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/hall/index",         "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/room-list/index",    "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/table-texas/index",  "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/profile/index",      "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/pay/index",          "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/withdraw/index",     "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/records/index",      "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/flow/index",         "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/messages/index",    "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/service/index",      "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/invite/index",       "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/setting/index",      "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/create-room/index",  "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/my-rooms/index",     "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/spectate/index",     "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/gift/index",         "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/agent/index",        "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/error/index",        "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/table-zhajinhua/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/table-sangong/index",   "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/table-niuniu/index",   "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/table-tbniuniu/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages/table-tbsangong/index","style": { "navigationStyle": "custom", "pageOrientation": "landscape" } }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "V-POKER",
+    "navigationBarBackgroundColor": "#0B1A3A",
+    "backgroundColor": "#0B1A3A",
+    "pageOrientation": "landscape",
+    "rpxCalcMaxDeviceWidth": 2560,
+    "rpxCalcBaseDeviceWidth": 750
+  }
+}

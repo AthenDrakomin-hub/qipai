@@ -1,0 +1,21 @@
+// ============================================================
+// V-POKER 设计令牌 · 间距
+// 8rpx 基准栅格，横屏手游
+// ============================================================
+
+$space-1:  8rpx;
+$space-2:  16rpx;
+$space-3:  24rpx;
+$space-4:  32rpx;
+$space-5:  40rpx;
+$space-6:  48rpx;
+$space-8:  64rpx;
+$space-10: 80rpx;
+$space-12: 96rpx;
+$space-16: 128rpx;
+
+// ---------- 语义间距 ----------
+$space-page-x:    40rpx;   // 页面左右安全边距
+$space-card-gap:  24rpx;   // 卡片之间间距
+$space-list-gap:  16rpx;   // 列表项间距
+$space-section:   48rpx;   // 模块之间纵向间距

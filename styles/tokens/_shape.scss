@@ -1,0 +1,24 @@
+// ============================================================
+// V-POKER 设计令牌 · 圆角 / 描边 / 阴影
+// ============================================================
+
+// ---------- 圆角 ----------
+$radius-xs:    8rpx;
+$radius-sm:    12rpx;
+$radius-base:   16rpx;
+$radius-md:     20rpx;
+$radius-lg:     28rpx;
+$radius-xl:     40rpx;
+$radius-2xl:    56rpx;
+$radius-full:  9999rpx;   // 胶囊按钮、圆形头像
+
+// ---------- 边框宽度 ----------
+$border-width-thin:  2rpx;
+$border-width-base:  4rpx;
+$border-width-thick: 6rpx;
+
+// ---------- 阴影（颜色见 _color.scss）----------
+$shadow-sm:    0 2rpx 8rpx rgba(0, 0, 0, 0.25);
+$shadow-base:   0 4rpx 16rpx rgba(0, 0, 0, 0.35);
+$shadow-lg:     0 8rpx 32rpx rgba(0, 0, 0, 0.45);
+$shadow-focus:  0 0 0 4rpx rgba(230, 194, 90, 0.25);   // 输入框 focus 外圈

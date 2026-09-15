@@ -1,0 +1,6 @@
+{
+  "name": "v-poker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "V-POKER 棋牌竞技平台 - uni-app Vue3 横屏 16:9（HBuilderX 项目，请使用 HBuilderX 运行与发布）"
+}

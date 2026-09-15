@@ -1,0 +1,31 @@
+// ============================================================
+// V-POKER 设计令牌 · 字体
+// 横屏 16:9 手游，rpx 单位（750rpx = 屏宽）
+// ============================================================
+
+// ---------- 字号 ----------
+$font-size-xs:   22rpx;   // 备注、说明文字
+$font-size-sm:   26rpx;   // 次要标签
+$font-size-base: 30rpx;   // 正文、按钮文字
+$font-size-md:   34rpx;   // 列表标题、输入文字
+$font-size-lg:   40rpx;   // 卡片标题、弹窗标题
+$font-size-xl:   48rpx;   // 页面大标题
+$font-size-xxl:  60rpx;   // 底池金额、余额大数字
+$font-size-xxxl: 88rpx;   // 结算页巨额数字、奖池
+
+// ---------- 字重 ----------
+$font-weight-regular:  400;
+$font-weight-medium:   500;
+$font-weight-semi:     600;
+$font-weight-bold:     700;
+$font-weight-black:    900;
+
+// ---------- 行高 ----------
+$line-height-tight:    1.2;
+$line-height-normal:   1.5;
+$line-height-relaxed:  1.7;
+
+// ---------- 字体族 ----------
+$font-family-base:     -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+$font-family-numeric:  "DIN Alternate", "Bahnschrift", -apple-system, sans-serif;  // 数字、金额
+$font-family-logo:     "Impact", "Arial Black", sans-serif;                          // 品牌 LOGO
