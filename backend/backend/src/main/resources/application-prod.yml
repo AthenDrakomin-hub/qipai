@@ -8,12 +8,15 @@ spring:
     name: poker-platform
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/poker_platform?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false&zeroDateTimeBehavior=convertToNull
-    username: poker
-    password: Poker@2024
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/poker_platform?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false&zeroDateTimeBehavior=convertToNull}
+    username: ${SPRING_DATASOURCE_USERNAME:poker}
+    password: ${SPRING_DATASOURCE_PASSWORD:Poker@2024}
+  h2:
+    console:
+      enabled: ${SPRING_H2_CONSOLE_ENABLED:false}
   sql:
     init:
-      mode: always
+      mode: ${SPRING_SQL_INIT_MODE:always}
       schema-locations: classpath:schema.sql
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -32,7 +35,7 @@ mybatis-plus:
       logic-not-delete-value: 0
 
 jwt:
-  secret: poker-platform-super-secret-key-2024-please-change-in-production
+  secret: ${JWT_SECRET:poker-platform-super-secret-key-2024-please-change-in-production}
   expire: 86400000
   header: Authorization
   prefix: Bearer

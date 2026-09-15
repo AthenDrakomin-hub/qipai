@@ -36,8 +36,9 @@ public class AuthInterceptor implements HandlerInterceptor {
         }
 
         String uri = request.getRequestURI();
-        // 登录注册 放行
+        // 登录注册、健康检查、登出 放行
         if (uri.contains("/auth/login") || uri.contains("/auth/register")
+                || uri.contains("/auth/health") || uri.contains("/auth/logout")
                 || uri.contains("/h2-console") || uri.contains("/swagger")
                 || uri.contains("/doc.html") || uri.contains("/webjars")
                 || uri.contains("/v2/api-docs") || uri.contains("/favicon")

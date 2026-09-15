@@ -16,6 +16,8 @@ __MACOSX/
 .env
 .env.local
 .env.*.local
+.env.prod
+deploy/.env.prod
 
 # IDE
 .idea/
