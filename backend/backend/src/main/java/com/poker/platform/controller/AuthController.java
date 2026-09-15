@@ -39,6 +39,14 @@ public class AuthController {
     }
 
     /**
+     * 退出登录（JWT 无状态，服务端仅返回成功，客户端清理本地登录态）
+     */
+    @PostMapping("/logout")
+    public R<Void> logout() {
+        return R.ok();
+    }
+
+    /**
      * 健康检查
      */
     @GetMapping("/health")
