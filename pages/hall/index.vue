@@ -38,6 +38,7 @@
 
       <!-- 中间大厅 -->
       <view class="hall__center">
+        <image class="hall__host" src="/static/generated/hall-host.png" mode="aspectFit" />
         <view class="hall__games">
           <view
             v-for="g in games"
@@ -166,6 +167,9 @@ function onTabClick(t) {
   @include page-bg;
   width: 100%; min-height: 100vh;
   display: flex; flex-direction: column;
+  background-image: url("/static/generated/hall-background.png");
+  background-size: cover;
+  background-position: center;
 
   &__topbar {
     display: flex; align-items: center;
@@ -229,15 +233,30 @@ function onTabClick(t) {
     flex: 1;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
-    gap: 32rpx;
+    gap: 18rpx;
+    position: relative;
+  }
+
+  &__host {
+    position: absolute;
+    left: 50%;
+    bottom: -32rpx;
+    transform: translateX(-50%);
+    width: 620rpx;
+    height: 780rpx;
+    opacity: 0.96;
+    pointer-events: none;
   }
   &__games {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24rpx;
   }
   &__game {
     width: 220rpx; height: 200rpx;
+    backdrop-filter: blur(8rpx);
     background: $color-bg-panel;
     border: $border-width-thin solid $color-border-gold;
     border-radius: $radius-lg;

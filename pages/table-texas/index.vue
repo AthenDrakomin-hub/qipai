@@ -181,6 +181,9 @@ function onExit() {
 @import '@/styles/tokens/index.scss';
 
 .table {
+  background-image: url("/static/generated/poker-table-background.png");
+  background-size: cover;
+  background-position: center;
   @include page-bg;
   width: 100%; min-height: 100vh;
   display: flex; flex-direction: column;
