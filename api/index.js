@@ -1,5 +1,5 @@
 // ============================================================
-// V-POKER API 门面层（对齐《接口文档 v1.0》路径与字段）
+// V-POKER API 门面层（路径与字段对齐后端 poker-platform 实际接口）
 // - USE_MOCK=true ：前端独立联调，数据来自 mock/index.js
 // - USE_MOCK=false：走 utils/request.js 真实后端
 // - 切换后端：1) 将 USE_MOCK 改为 false  2) 在 utils/request.js 配置 baseURL
@@ -153,7 +153,7 @@ const mockApi = {
 
 // ---------- 真实后端实现（USE_MOCK=false 时生效） ----------
 const realApi = {
-  health: () => request({ url: '/health', auth: false }),
+  health: () => request({ url: '/auth/health', auth: false }),
   login: (username, password) => request({ url: '/auth/login', method: 'POST', data: { username, password }, auth: false }),
   register: (payload) => request({ url: '/auth/register', method: 'POST', data: payload, auth: false }),
   logout: () => request({ url: '/auth/logout', method: 'POST' }),
@@ -162,15 +162,15 @@ const realApi = {
   gameHistory: (page = 1, size = 10) => request({ url: `/user/game-history?page=${page}&size=${size}` }),
   creditLog: (page = 1, size = 20) => request({ url: `/user/credit-log?page=${page}&size=${size}` }),
   lobby: (params = {}) => request({ url: '/room/lobby', data: params }),
-  roomDetail: (roomId) => request({ url: `/room/detail?roomId=${roomId}` }),
+  roomDetail: (roomId) => request({ url: `/room/${roomId}` }),
   joinRoom: (payload) => request({ url: '/room/join', method: 'POST', data: payload }),
   createRoom: (payload) => request({ url: '/room/create', method: 'POST', data: payload }),
   myOwnedRooms: () => request({ url: '/room/my-owned' }),
-  closeRoom: (roomId) => request({ url: '/room/close', method: 'POST', data: { roomId } }),
-  playRound: (roomId) => request({ url: '/game/play-round', method: 'POST', data: { roomId } }),
-  subordinates: () => request({ url: '/agent/subordinates' }),
-  gift: (payload) => request({ url: '/agent/gift', method: 'POST', data: payload }),
-  submitComplaint: (payload) => request({ url: '/complaint/submit', method: 'POST', data: payload }),
+  closeRoom: (roomId) => request({ url: `/room/${roomId}/close`, method: 'POST' }),
+  playRound: (roomId) => request({ url: `/room/${roomId}/play-round`, method: 'POST' }),
+  subordinates: () => request({ url: '/user/agent/subordinates' }),
+  gift: (payload) => request({ url: '/user/agent/gift', method: 'POST', data: payload }),
+  submitComplaint: (payload) => request({ url: '/cs/complaint', method: 'POST', data: payload }),
 }
 
 function call(name, ...args) {
