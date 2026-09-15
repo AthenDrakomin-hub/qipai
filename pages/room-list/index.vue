@@ -192,6 +192,9 @@ function onBack() { uni.navigateBack() }
 @import '@/styles/tokens/index.scss';
 
 .room-list {
+  background-image: url("/static/generated/room-list-background.png");
+  background-size: cover;
+  background-position: center;
   @include page-bg;
   width: 100%; min-height: 100vh;
   @include safe-area-padding(24rpx, 40rpx, 24rpx, 40rpx);

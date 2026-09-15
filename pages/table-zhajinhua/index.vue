@@ -89,7 +89,10 @@ async function act(label) {
 
 <style lang="scss">
 @import '@/styles/tokens/index.scss';
-.table { @include page-bg; min-height: 100vh; display: flex; flex-direction: column; }
+.table {
+  background-image: url("/static/generated/table-zhajinhua-background.png");
+  background-size: cover;
+  background-position: center; @include page-bg; min-height: 100vh; display: flex; flex-direction: column; }
 .table__top { display: flex; justify-content: space-between; padding: 16rpx 40rpx; color: #fff; font-size: $font-size-sm; }
 .felt {
   flex: 1; position: relative; margin: 0 40rpx;

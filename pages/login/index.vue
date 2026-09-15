@@ -2,8 +2,7 @@
   <view class="login">
     <view class="login__left">
       <view class="login__brand">
-        <view class="login__vmark">V</view>
-        <text class="login__name">V-POKER</text>
+        <image class="login__logo" src="/static/generated/vpoker-logo.png" mode="aspectFit" />
       </view>
 
       <view class="login__form">
@@ -32,7 +31,7 @@
     </view>
 
     <view class="login__right">
-      <view class="login__dealer" />
+      <image class="login__dealer" src="/static/generated/login-dealer.png" mode="aspectFit" />
     </view>
   </view>
 </template>
@@ -79,19 +78,14 @@ function onGoRegister() { uni.navigateTo({ url: '/pages/register/index' }) }
   justify-content: space-between;
   padding: 0 80rpx;
   gap: 80rpx;
+  background-image: url("/static/generated/login-background.png");
+  background-size: cover;
+  background-position: center;
 
   &__left { flex: 1; max-width: 560rpx; }
 
-  &__brand { display: flex; align-items: center; gap: 20rpx; margin-bottom: 48rpx; }
-  &__vmark {
-    width: 80rpx; height: 80rpx;
-    border: 4rpx solid $color-brand-gold;
-    border-radius: 16rpx;
-    color: $color-brand-gold;
-    font-size: 48rpx; font-weight: 900;
-    display: flex; align-items: center; justify-content: center;
-  }
-  &__name { font-size: $font-size-xl; font-weight: 900; color: $color-text-gold; letter-spacing: 4rpx; }
+  &__brand { display: flex; align-items: center; justify-content: center; margin-bottom: 48rpx; }
+  &__logo { width: 360rpx; height: 150rpx; }
 
   &__row {
     display: flex; justify-content: space-between;
@@ -114,9 +108,8 @@ function onGoRegister() { uni.navigateTo({ url: '/pages/register/index' }) }
     display: flex; align-items: center; justify-content: center;
   }
   &__dealer {
-    width: 420rpx; height: 640rpx;
-    background: linear-gradient(180deg, rgba(230,194,90,0.15), transparent);
-    border-radius: $radius-2xl;
+    width: 700rpx; height: 760rpx;
+    object-fit: contain;
   }
 }
 </style>
